@@ -1,5 +1,30 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
+# Maven / Java
+/target/
+**/target/
+*.class
+
+# IntelliJ IDEA
+/.idea/
+/*.iml
+/*.iws
+
+# Eclipse
+/.settings/
+*.classpath
+*.project
+*.factorypath
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+# VS Code
+.vscode/
+
+# Misc
+.DS_Store
+.env
