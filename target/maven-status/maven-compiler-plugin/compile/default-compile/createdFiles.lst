@@ -1,0 +1,5 @@
+org/climbing/app/ClimbingAppApplication.class
+org/climbing/app/controller/TestController$ClimbingController.class
+org/climbing/app/controller/TestController.class
+org/climbing/app/config/CorsConfig.class
+org/climbing/app/config/CorsConfig$1.class
