@@ -6,6 +6,7 @@ import org.climbing.app.repository.ClimbingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,23 +31,6 @@ public class ClimbingService {
         }
     }
 
-    public Climbs updateClimb(Long id, ClimbsDTO climbsDTO) {
-        if(climbsDTO != null) {
-            try {
-                Climbs existingClimb = climbingRepository.findById(id)
-                        .orElseThrow(() -> new RuntimeException("Climb not found with id " + id));
-
-                // Update fields from DTO
-                setClimb(climbsDTO, existingClimb);
-                return existingClimb;
-            }
-            catch(Exception e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return null;
-    }
-
     private void setClimb(ClimbsDTO climbsDTO, Climbs existingClimb) {
         try {
             existingClimb.setName(climbsDTO.getName());
@@ -66,4 +50,27 @@ public class ClimbingService {
         }
 
     }
+
+
+    public Climbs updateClimb(Long id, ClimbsDTO climbsDTO) {
+        if(climbsDTO != null) {
+            try {
+                Climbs existingClimb = climbingRepository.findById(id)
+                        .orElseThrow(() -> new RuntimeException("Climb not found with id " + id));
+
+                // Update fields from DTO
+                setClimb(climbsDTO, existingClimb);
+                return existingClimb;
+            }
+            catch(Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return null;
+    }
+
+    public List<Climbs> getAllClimbs() {
+        return climbingRepository.findAll();
+    }
+
 }

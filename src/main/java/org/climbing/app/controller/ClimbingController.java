@@ -7,6 +7,7 @@ import org.climbing.app.service.ClimbingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,6 +20,11 @@ public class ClimbingController {
     @GetMapping("/getClimb")
     public Optional<Climbs> getClimb(long id) {
         return climbingService.getClimbs(id);
+    }
+
+    @GetMapping("getAllClimbs")
+    public List<Climbs> getAllClimbs() {
+        return climbingService.getAllClimbs();
     }
 
     @PostMapping("/addClimb")

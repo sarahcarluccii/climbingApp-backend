@@ -13,4 +13,6 @@ public interface ClimbingRepository extends JpaRepository<Climbs, Long> {
     Optional<Climbs> findById(long id);
 
     List<Climbs> findByGrade(String grade);
+
+    List<Climbs> findAll();
 }
